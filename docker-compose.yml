@@ -1,0 +1,16 @@
+version: "2"
+services:
+  node:
+    build: .
+    image: "node:8"
+    ports:
+      - "3333:3333"
+    user: "node"
+    working_dir: /home/arthurgustavo/Projects
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/home/arthurgustavo/Projects
+    expose:
+      - "3333"
+    command: "npm start"
